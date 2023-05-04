@@ -1,0 +1,78 @@
+.container {
+    background: #424242;
+    height: 40rem;
+    width: 32rem;
+    padding: 1rem;
+    margin: 0 auto;
+    text-align: center;
+    background: url("../../assets/background4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.welcome {
+    font-size: xxx-large;
+    color: white;
+    margin-top: 11rem;
+}
+.text {
+    font-size: 13px;
+    color: white;
+    width: 396px;
+    text-align: left;
+    margin: 0 auto;
+    margin-top: 2rem;
+   
+}
+
+.emailId {
+    border-radius: 2rem;
+    width: 17rem;
+    height: 1rem;
+    text-align: left;
+    margin: 0 auto;
+    background: transparent;
+    padding: 1rem;
+    margin-top: 2rem;
+    border: 1px solid white;
+    color: white;
+    font-size: 17px;
+    background: #14141496;
+}
+.password {
+    border-radius: 2rem;
+    width: 17rem;
+    height: 1rem;
+    text-align: left;
+    margin: 0 auto;
+    background: transparent;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 1px solid white;
+    color: white;
+    font-size: 17px;
+    background: #14141496;
+    
+}
+.login-button{
+    border-radius: 2rem;
+    width: 19rem;
+    height: 3rem;
+    margin: 0 auto;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    background: #53d353;
+    color: white;
+    text-align: center;
+    font-size: 17px;
+}
+.word {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    color: #fff;
+    margin-top: 2rem;
+    font-size: 15px;
+}
+
+
+

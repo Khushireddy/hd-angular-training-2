@@ -1,0 +1,37 @@
+<div class="container">
+    
+    <div class="bottom">
+        <div class="right">
+            <div class="title">
+                How to create a form in Airtable 
+            </div>
+            <div class="text"> Find out which posts are a hit with Blogger's built-in analytics. You'll see where your audience is coming from and what they're interested in. You can even connect your blog directly to Google Analytics for a more detailed look. </div>
+            
+            </div>
+        <div class="left">
+            <form [formGroup]="form">
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input required formControlName="name" class="form-control" placeholder="Charmander" type="text" matInput />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Description</mat-label>
+                    <textarea matInput required formControlName="description" class="form-control" placeholder="Description"  ></textarea>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Image URL</mat-label>
+                    <input matInput required formControlName="imageUrl" class="form-control" placeholder="https://charmander.png" type="text"  />
+                </mat-form-field>
+                <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color" formControlName="isActive" >
+                    <mat-button-toggle  value="active">Active</mat-button-toggle>
+                    <mat-button-toggle value="in-active">In-Active</mat-button-toggle>
+               
+                  </mat-button-toggle-group>
+                <button type="button" mat-raised-button (click)="submit()" class="save" color="primary" [disabled]="!form.valid">
+                    submit
+                </button>
+            </form>
+            
+        </div>
+    </div>
+</div>

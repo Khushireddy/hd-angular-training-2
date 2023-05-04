@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="welcome">Welcome</div>
+    <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Donec auctor neque sed pretium luctus.</div>
+    <div>
+    <input class="emailId" placeholder="Enter Email" type="email" id="email" name="email" [(ngModel)]="email" required>
+    </div>
+    <div>
+        <input class="password" placeholder="Enter Password" type="password" id="password" name="password" [(ngModel)]="password" required>
+    </div>
+    <div>
+        <button class="login-button" type="submit" (click)="login()">Login</button>
+    </div>
+    <div class="word">
+        <div class="left">Password</div>
+        <div class="logo">|</div>
+        <div class="right">Register</div>
+    </div>
+</div>

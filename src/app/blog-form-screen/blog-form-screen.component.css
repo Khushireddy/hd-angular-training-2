@@ -1,0 +1,59 @@
+.container {
+    align-items: baseline;
+} 
+.icon {
+    width:20px;
+}
+ .top {
+    display: flex;
+    gap: 8px;
+    background: #d69393;
+    align-items: baseline;
+}
+.head {
+    font-size: 25px;
+}
+.bottom {
+    display: flex;
+}
+.blog-button {
+        width: 10rem;
+        height: 3rem;
+        border-radius: 2rem;
+        color: #fff;
+        background: #53d353;
+        font-size: 17px;
+}
+.right {
+    background: url("../../assets/background2.jpg");
+    flex: 1;
+    
+}
+.title {
+    font-size: 3rem;
+    line-height: 50px;
+    padding:25px;
+    color: #fff;
+}
+.text {
+    text-align: center;
+    color: #fff;
+    padding: 3rem;
+    font-size: 15px;
+}
+.left {
+    background: #e6b760;
+    flex: 1;
+}
+.left form {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+}
+.save {
+    width: 13rem;
+    height: 3rem;
+    background-color: #53d353;
+    color: white;
+    border-radius: 2rem;
+}
