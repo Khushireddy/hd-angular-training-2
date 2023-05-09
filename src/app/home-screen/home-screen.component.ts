@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-screen',
@@ -7,8 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-screen.component.css']
 })
 export class HomeScreenComponent {
-  constructor(private router: Router){
-    
+  isLogin = false;
+  constructor(private router: Router, ){
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+        if (event.url === '/login') {
+          this.isLogin= true;
+        } else {
+          this.isLogin= false;
+        }
+      }
+    });
   }
   profile(){
     console.log('profile');

@@ -50,4 +50,4 @@ import {MatMenuModule} from '@angular/material/menu';
     BrowserAnimationsModule,
     MatMenuModule]
 })
-export class PokemonModule { }
+export class BlogModule { }

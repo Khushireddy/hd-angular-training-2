@@ -13,7 +13,7 @@ import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { BlogListScreenComponent } from './blog-list-screen/blog-list-screen.component';
 import { BlogFormScreenComponent } from './blog-form-screen/blog-form-screen.component';
 import { ProfileScreenComponent } from './profile-screen/profile-screen.component';
-import { PokemonModule } from './features/pokemon/pokemon.module';
+import { BlogModule } from './features/blog/blog.module';
 import { FormsModule } from '@angular/forms';
 import { ListComponent } from './list/list.component';
 
@@ -35,7 +35,7 @@ import { ListComponent } from './list/list.component';
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
-    PokemonModule
+    BlogModule
     
   ],
   providers: [],

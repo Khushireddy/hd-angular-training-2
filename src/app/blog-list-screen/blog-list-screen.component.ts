@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PokedexFirestoreService } from '../pokedex-firestore.service';
+
 import { Observable } from 'rxjs';
 import { Blog } from '../model/blog.interface';
+import { BlogFirestoreService } from '../blog-firestore.service';
 
 @Component({
   selector: 'app-blog-list-screen',
@@ -14,7 +15,7 @@ export class BlogListScreenComponent implements OnInit {
   blogs:Observable<Blog[]>;
 
   constructor(private router: Router,
-    private readonly pokedexService:PokedexFirestoreService) {}
+    private readonly blogStoreService:BlogFirestoreService) {}
 
   AddBlog(){
      console.log('AddBlog...');
@@ -29,7 +30,7 @@ export class BlogListScreenComponent implements OnInit {
     
   }
   getAll() {
-    this.blogs = this.pokedexService.getAllBlag();
+    this.blogs = this.blogStoreService.getAllBlag();
    }
 
 }

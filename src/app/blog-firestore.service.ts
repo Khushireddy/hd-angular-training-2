@@ -19,17 +19,17 @@ import { Blog } from './model/blog.interface';
 @Injectable({
   providedIn: 'root' ,
 })
-export class PokedexFirestoreService {
-  private pokemonCollection: CollectionReference<DocumentData>;
+export class BlogFirestoreService {
+
   private blogCollection: CollectionReference<DocumentData>;
 
   constructor(private readonly firestore: Firestore) {
-    this.pokemonCollection = collection(this.firestore, 'pokemon');
+   
     this.blogCollection = collection(this.firestore, 'blog');
    }
 
    getAll() {
-    return collectionData(this.pokemonCollection, {
+    return collectionData(this.blogCollection, {
       idField: 'id',
     }) as Observable<Pokemon[]>;
    }
@@ -41,26 +41,26 @@ export class PokedexFirestoreService {
    }
 
    get(id: string) {
-    const pokemonDocumentReference = doc(this.firestore,`pokemon/${id}`);
-    return docData(pokemonDocumentReference,{ idField: 'id'});
+    const blogDocumentReference = doc(this.firestore,`blog/${id}`);
+    return docData(blogDocumentReference,{ idField: 'id'});
    }
 
-   create(pokemon: Pokemon) {
-    return addDoc(this.pokemonCollection, pokemon);
+   create(blog: Blog) {
+    return addDoc(this.blogCollection, blog);
    }
    createBlog(blog:Blog){
     console.log(blog);
     return addDoc(this.blogCollection, blog);
    }
 
-   update(pokemon: Pokemon) {
-    const pokemonDocumentReference = doc( this.firestore, `pokemon/${pokemon.id}`);
-    return updateDoc(pokemonDocumentReference, { ...pokemon });
+   update(blog: Blog) {
+    const blogDocumentReference = doc( this.firestore, `blog/${blog.id}`);
+    return updateDoc(blogDocumentReference, { ...blog });
    }
 
    delete(id: string) {
-    const pokemonDocumentReference = doc(this.firestore, `pokemon/${id}`);
-   return deleteDoc(pokemonDocumentReference);
+    const blogDocumentReference = doc(this.firestore, `blog/${id}`);
+   return deleteDoc(blogDocumentReference);
    }
 }
 

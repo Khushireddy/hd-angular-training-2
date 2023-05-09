@@ -2,9 +2,10 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Blog } from '../model/blog.interface';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { PokedexFirestoreService } from '../pokedex-firestore.service';
+
 import { collectionData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { BlogFirestoreService } from '../blog-firestore.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class BlogFormScreenComponent implements OnInit{
   form: FormGroup;
   blog: any;
   constructor(private readonly FormBuilder: FormBuilder,
-    private readonly pokedexService: PokedexFirestoreService){}
+    private readonly blogStoreService: BlogFirestoreService){}
    ngOnInit(){
     this.setForm();
    }
@@ -34,7 +35,7 @@ export class BlogFormScreenComponent implements OnInit{
       
       this.blog = { ...this.blog, ...this.form.value};
       console.log(this.blog);
-      this.pokedexService.createBlog(this.blog);
+      this.blogStoreService.createBlog(this.blog);
     }
    
 }

@@ -1,6 +1,5 @@
 <div class="container">
-    
-    <div class="head">
+    <div class="head" *ngIf="!isLogin">
         <img class="logo-img" src="../../assets/manager-icon.webp">
         <div class="title">Paperform</div>
         <div>
@@ -13,6 +12,6 @@
             <button class="home" (click)="list()">Home</button>
         </div>
     </div>
-
+   
     <router-outlet></router-outlet>
 </div>

@@ -5,15 +5,16 @@ import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { BlogListScreenComponent } from './blog-list-screen/blog-list-screen.component';
 import { BlogFormScreenComponent } from './blog-form-screen/blog-form-screen.component';
 import { ProfileScreenComponent } from './profile-screen/profile-screen.component';
+import { AuthGuard } from './service/auth.guard';
 
 const routes: Routes = [
-  {path:'', component:LoginScreenComponent},
-  { path: 'pokemon', loadChildren: () => import('./features/pokemon/pokemon.module').then(m => m.PokemonModule) },
-{path:'login',component:LoginScreenComponent},
-{path:'home',component:HomeScreenComponent},
-{path:'blog-list',component:BlogListScreenComponent},
-{path:'blog-form',component:BlogFormScreenComponent},
-{path:'profile',component:ProfileScreenComponent}
+  { path: '', component: LoginScreenComponent },
+  { path: 'blog', loadChildren: () => import('./features/blog/blog.module').then(m => m.BlogModule) },
+  { path: 'login', component: LoginScreenComponent },
+  { path: 'home', component: HomeScreenComponent, canActivate:[ AuthGuard ] },
+  { path: 'blog-list', component: BlogListScreenComponent, canActivate:[ AuthGuard ] },
+  { path: 'blog-form', component: BlogFormScreenComponent, canActivate:[ AuthGuard ] },
+  { path: 'profile', component: ProfileScreenComponent,canActivate:[ AuthGuard ] }
 ];
 
 @NgModule({

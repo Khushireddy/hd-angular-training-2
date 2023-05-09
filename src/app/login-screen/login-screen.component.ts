@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login-screen',
   templateUrl: './login-screen.component.html',
-  styleUrls: ['./login-screen.component.css']
+  styleUrls: ['./login-screen.component.scss']
 })
 export class LoginScreenComponent {
   email: string;
@@ -12,6 +12,7 @@ export class LoginScreenComponent {
   constructor(private router: Router){}
   login(){
     console.log('login....');
+    localStorage.setItem('user',this.email )
     this.router.navigate(['/home']);
   }
 }

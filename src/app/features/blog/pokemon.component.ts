@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, Subject, filter, takeUntil, tap } from 'rxjs';
-import { PokedexFirestoreService } from 'src/app/pokedex-firestore.service';
+
 import { Pokemon } from '../interfaces/pokemon.interface';
 import { FormComponent } from '../interfaces/components/form/form.component';
+import { BlogFirestoreService } from 'src/app/blog-firestore.service';
 @Component({
   selector: 'app-pokemon',
   templateUrl: './pokemon.component.html',
@@ -16,7 +17,7 @@ export class PokemonComponent implements OnInit {
   destroyed$ = new Subject<void>();
   
   constructor(
-    private readonly pokedexService: PokedexFirestoreService,
+    private readonly pokedexService: BlogFirestoreService,
     private readonly dialog: MatDialog
   ) {}
 
