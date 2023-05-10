@@ -9,15 +9,7 @@ import { NavigationEnd, Router } from '@angular/router';
 export class HomeScreenComponent {
   isLogin = false;
   constructor(private router: Router, ){
-    this.router.events.subscribe((event: any) => {
-      if (event instanceof NavigationEnd) {
-        if (event.url === '/login') {
-          this.isLogin= true;
-        } else {
-          this.isLogin= false;
-        }
-      }
-    });
+    
   }
   profile(){
     console.log('profile');

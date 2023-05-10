@@ -1,1 +1,8 @@
-<app-home-screen></app-home-screen>
+
+<div class="" [ngClass]="theme == 'dark'?'dark-theme':'light-theme'">
+    <div class="control">
+       <button [ngClass]="theme" (click)="toggleTheme()">{{theme}}</button>
+    </div>
+    <app-home-screen></app-home-screen>
+</div>
+
